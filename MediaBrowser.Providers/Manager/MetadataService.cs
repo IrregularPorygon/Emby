@@ -59,6 +59,7 @@ namespace MediaBrowser.Providers.Manager
             DateTime? newDateModified = null;
             if (item.LocationType == LocationType.FileSystem)
             {
+                Logger.Debug("Getting path for {0}.", item.Path);
                 var file = refreshOptions.DirectoryService.GetFile(item.Path);
                 if (file != null)
                 {
